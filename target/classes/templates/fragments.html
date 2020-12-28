@@ -2,26 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Your Travel</title>
-    <link rel="stylesheet" href="/menu.css">
-    <link rel="stylesheet" href="/main.css">
+    <title>Title</title>
 </head>
 <body>
-<div id="header" th:fragment="header-box">
-    <img src="/logo.jpg" id="logo">
-</div>
-<div id="menu" th:fragment="menu-box">
+<div id="menu" th:fragment="menu">
     <nav class="skew-menu">
         <ul>
-            <li><a href="/main">Strona Główna</a></li>
-            <li><a href="/contact">Kontakt</a></li>
-            <li><a href="/logout" >Wyloguj</a></li>
-            <li><a href="/login" >Zaloguj</a></li>
+            <li><a href="/main" class="menu-button">Strona Główna</a></li>
+            <li> <a href="/contact" class="menu-button">Kontakt</a></li>
+            <li> <a href="/basket" class="menu-button" th:if="${isLogged}">Koszyk</a></li>
+            <li><a href="/logout" class="menu-button" th:if="${isLogged}">Wyloguj</a></li>
+            <li><a href="/login" class="menu-button" th:if="${!isLogged}">Zaloguj</a></li>
         </ul>
     </nav>
 </div>
-<div id="footer" th:fragment="footer-box">
-    <p>Copyright &copy; <script>document.write(new Date().getFullYear())</script></p>
-</div>
+
+<img src="/logo.jpg" id="logo" th:fragment="logo">
 </body>
 </html>

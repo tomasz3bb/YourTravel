@@ -1,6 +1,30 @@
 body {
     font-family: Trebuchet MS, sans-serif;
+    background: url("/pattern.png");
+    margin: auto;
+    padding: 0;
 }
+#page{
+    margin: 0 auto;
+    padding: 30px;
+    width: 90%;
+    background: white;
+}
+#logo  {
+    width: 15%;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#content{
+    border-top: #ea2222 2px solid;
+    border-bottom: #ea2222 2px solid;
+    margin: 15px auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
 .skew-menu {
     text-align: center;
     margin-top: 20px;
