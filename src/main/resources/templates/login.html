@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Travel</title>
+    <link rel="stylesheet" href="/menu.css">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+<div id="page">
+    <div th:replace="fragments.html :: header-box"></div>
+    <div th:replace="fragments.html :: menu-box"></div>
+
+    <div id="content">
+        <form id="login-form" method="post">
+            <input type="text" placeholder="Login" th:field="*{userModel.login}">
+            <input type="password" placeholder="Hasło" th:field="*{userModel.pass}">
+            <input type="submit" value="Zaloguj">
+            <a href="/register" id="register-link">Zarejestruj</a>
+        </form>
+    </div>
+
+    <div th:replace="fragments.html :: footer-box"></div>
+</div>
+</body>
+</html>

@@ -1,6 +1,13 @@
-pl\edu\wszib\yourtravel\model\view\RegistrationModel.class
+pl\edu\wszib\yourtravel\services\Impl\UserServiceImpl.class
 pl\edu\wszib\yourtravel\App.class
 pl\edu\wszib\yourtravel\model\User.class
+pl\edu\wszib\yourtravel\services\IUserService.class
+pl\edu\wszib\yourtravel\session\SessionObject.class
+pl\edu\wszib\yourtravel\model\view\RegistrationModel.class
+pl\edu\wszib\yourtravel\dao\Impl\UserDAOImpl.class
 pl\edu\wszib\yourtravel\configuration\AppConfiguration.class
+pl\edu\wszib\yourtravel\controllers\UserController.class
 pl\edu\wszib\yourtravel\model\User$Role.class
+pl\edu\wszib\yourtravel\controllers\CommonController.class
 pl\edu\wszib\yourtravel\model\Tour.class
+pl\edu\wszib\yourtravel\dao\IUserDAO.class

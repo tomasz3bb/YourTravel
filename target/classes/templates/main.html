@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Travel</title>
-    <link rel=stylesheet href="/menu.css">
+    <link rel="stylesheet" href="/menu.css">
+    <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-<div th:replace="fragments.html :: logo"></div>
-<div th:replace="fragments.html :: menu"></div>
-<div id="content">
+<div id="page">
+    <div th:replace="fragments.html :: header-box"></div>
+    <div th:replace="fragments.html :: menu-box"></div>
 
+    <div id="content">
+        <p>Przykładowy tekst</p>
+        Przykładowy tekstPrzykładowy tekstPrzykładowy tekstPrzykładowy tekst
+        Przykładowy tekst
+    </div>
+
+    <div th:replace="fragments.html :: footer-box"></div>
 </div>
 </body>
 </html>
