@@ -1,0 +1,33 @@
+body{
+    background: url("pattern.png");
+    margin: auto;
+    padding: 0;
+}
+#page{
+    margin: 0 auto;
+    padding: 30px;
+    width: 90%;
+    background: white;
+}
+#logo  {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#content{
+    border-top: #ea2222 2px solid;
+    border-bottom: #ea2222 2px solid;
+    margin: 15px auto;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+#footer {
+    clear: both;
+}
+
+#footer p {
+    text-align: center;
+}
+
+

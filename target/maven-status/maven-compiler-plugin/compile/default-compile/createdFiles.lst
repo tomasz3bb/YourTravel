@@ -1,0 +1,6 @@
+pl\edu\wszib\yourtravel\model\view\RegistrationModel.class
+pl\edu\wszib\yourtravel\App.class
+pl\edu\wszib\yourtravel\model\User.class
+pl\edu\wszib\yourtravel\configuration\AppConfiguration.class
+pl\edu\wszib\yourtravel\model\User$Role.class
+pl\edu\wszib\yourtravel\model\Tour.class

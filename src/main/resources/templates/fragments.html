@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Your Travel</title>
+    <link rel="stylesheet" href="/menu.css">
     <link rel="stylesheet" href="/main.css">
-    <link rel="stylesheet" href="/commons.css">
 </head>
 <body>
 <div id="menu" th:fragment="menu">
-    <a href="/main" class="menu-button">Strona główna</a>
-    <a href="/contact" class="menu-button">Kontakt</a>
-
+    <nav class="skew-menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Cennik</a></li>
+            <li><a href="#">Galeria</a></li>
+            <li><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
 </div>
 
-<img src="/logo.png" id="logo" th:fragment="logo">
+<img src="/logo.jpg" id="logo" th:fragment="logo">
 </body>
 </html>
