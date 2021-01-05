@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Unicorn Book Store</title>
+    <title>Your Travel</title>
     <link rel="stylesheet" href="/main.css">
     <link rel="stylesheet" href="/commons.css">
 </head>
@@ -10,9 +10,23 @@
 <div id="page">
 <div th:replace="fragments.html :: logo"></div>
 <div th:replace="fragments.html :: menu"></div>
-<div id="content">
-
-</div>
+    <div th:replace="fragments.html :: menu2"></div>
+    <div id="content">
+        <th:block th:each="tour : ${tours}">
+            <div class="tour-box">
+                <div th:text="${tour.title}" class="title-box"></div>
+                <div th:text="${tour.country}" class="country-box"></div>
+                <div class="tour-data-box">
+                    <div th:text="'Data rozpoczęcia: ' + ${tour.startDate}"></div>
+                    <div th:text="'Data zakończenia: ' + ${tour.endDate}"></div>
+                    <div th:text="'Cena: ' + ${tour.price} + 'zł'"></div>
+                    <div th:text="'Ilość miejsc: ' + ${tour.seats}"></div>
+                    <a th:href="@{/addToBasket/{id}(id=${tour.id})}" class="buy-button" th:if="${isLogged}"></a>
+                    <a th:if="${role == 'ADMIN'}" th:href="@{/edit/{id}(id=${tour.id})}" class="edit-button"></a>
+                </div>
+            </div>
+        </th:block>
+    </div>
 </div>
 </body>
 </html>

@@ -42,8 +42,7 @@ public class UserServiceImpl implements IUserService {
             return false;
         }
 
-        User newUser = new User(0, registrationModel.getLogin(), registrationModel.getPass(), User.Role.USER, registrationModel.getName(),
-                registrationModel.getSurname(), registrationModel.getBirthdate(), registrationModel.getAddress());
+        User newUser = new User(0, registrationModel.getLogin(), registrationModel.getPass(), User.Role.USER );
 
         return this.userDAO.persist(newUser);
     }

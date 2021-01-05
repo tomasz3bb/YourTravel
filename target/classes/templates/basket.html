@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Travel</title>
+    <link rel="stylesheet" href="/basket.css">
+    <link rel="stylesheet" href="/commons.css">
+</head>
+<body>
+<div id="page">
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+
+    <div class="row header">
+        <div class="title">Tytuł</div>
+        <div class="country">Kraj</div>
+        <div class="seats">Ilość miejsc</div>
+        <div class="price">Cena za sztukę</div>
+        <div class="total">Cena</div>
+    </div>
+
+    <th:block th:each="tour : ${tours}">
+        <div class="row">
+            <div class="title" th:text="${tour.title}"></div>
+            <div class="country" th:text="${tour.country}"></div>
+            <div class="seats" th:text="${tour.seats}"></div>
+            <div class="price" th:text="${tour.price} + ' zł'"></div>
+            <div class="total" th:text="${tour.price * tour.seats} + ' zł'"></div>
+        </div>
+    </th:block>
+
+    <div class="row header">
+        <div class="title"></div>
+        <div class="pieces"></div>
+        <div class="seats"></div>
+        <div class="price">Suma</div>
+        <div class="total" th:text="${sum} + ' zł'"></div>
+    </div>
+</div>
+</div>
+</body>
+</html>

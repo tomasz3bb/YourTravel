@@ -29,10 +29,6 @@ public class UserDAOImpl implements IUserDAO {
                 user.setLogin(resultSet.getString("login"));
                 user.setPass(resultSet.getString("pass"));
                 user.setRole(User.Role.valueOf(resultSet.getString("role")));
-                user.setName(resultSet.getString("name"));
-                user.setSurname(resultSet.getString("surname"));
-                user.setBirthdate(resultSet.getDate("birthdate"));
-                user.setAddress(resultSet.getString("address"));
                 return user;
             }
         } catch (SQLException throwables) {
@@ -43,16 +39,12 @@ public class UserDAOImpl implements IUserDAO {
 
     @Override
     public boolean persist(User user) {
-        String sql = "INSERT INTO user (login, pass, role, name, surname, birthdate, address) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO user (login, pass, role) VALUES (?, ?, ?)";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setString(1, user.getLogin());
             preparedStatement.setString(2, user.getPass());
             preparedStatement.setString(3, user.getRole().toString());
-            preparedStatement.setString(4, user.getName());
-            preparedStatement.setString(5, user.getSurname());
-            preparedStatement.setDate(6, user.getBirthdate());
-            preparedStatement.setString(7, user.getAddress());
 
             preparedStatement.executeUpdate();
             return true;

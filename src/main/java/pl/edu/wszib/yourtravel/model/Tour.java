@@ -1,29 +1,27 @@
 package pl.edu.wszib.yourtravel.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Tour {
     private int id;
-    private String name;
-    private String destination;
+    private String title;
+    private String country;
     private Date startDate;
     private Date endDate;
     private double price;
     private int seats;
-    private String status;
 
-    public Tour(int id, String name, String destination, Date startDate, Date endDate, double price, int seats, String status) {
+    public Tour() {
+    }
+
+    public Tour(int id, String title, String country, Date startDate, Date endDate, double price, int seats) {
         this.id = id;
-        this.name = name;
-        this.destination = destination;
+        this.title = title;
+        this.country = country;
         this.startDate = startDate;
         this.endDate = endDate;
         this.price = price;
         this.seats = seats;
-        this.status = status;
-    }
-
-    public Tour() {
     }
 
     public int getId() {
@@ -34,20 +32,20 @@ public class Tour {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getDestination() {
-        return destination;
+    public String getCountry() {
+        return country;
     }
 
-    public void setDestination(String destination) {
-        this.destination = destination;
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public Date getStartDate() {
@@ -66,14 +64,6 @@ public class Tour {
         this.endDate = endDate;
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public int getSeats() {
         return seats;
     }
@@ -82,25 +72,11 @@ public class Tour {
         this.seats = seats;
     }
 
-    public String getStatus() {
-        return status;
+    public double getPrice() {
+        return price;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Tour{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", destination='" + destination + '\'' +
-                ", startDate=" + startDate +
-                ", endDate=" + endDate +
-                ", price=" + price +
-                ", seats=" + seats +
-                ", status='" + status + '\'' +
-                '}';
+    public void setPrice(double price) {
+        this.price = price;
     }
 }
