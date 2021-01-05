@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.yourtravel.dao.ITourDAO;
 import pl.edu.wszib.yourtravel.model.Tour;
+import pl.edu.wszib.yourtravel.model.User;
+import pl.edu.wszib.yourtravel.model.view.TourModel;
 import pl.edu.wszib.yourtravel.services.ITourService;
 
 import java.util.List;
@@ -35,5 +37,12 @@ public class TourServiceImpl implements ITourService {
         tourFromDatabase.setSeats(tour.getSeats());
 
         this.tourDAO.updateTour(tourFromDatabase);
+    }
+
+    @Override
+    public boolean addTour(TourModel tourModel) {
+        Tour newTour = new Tour(0, tourModel.getTitle(), tourModel.getCountry(), tourModel.getStartDate(),
+                tourModel.getEndDate(), tourModel.getPrice(), tourModel.getSeats());
+        return this.tourDAO.addTour(newTour);
     }
 }

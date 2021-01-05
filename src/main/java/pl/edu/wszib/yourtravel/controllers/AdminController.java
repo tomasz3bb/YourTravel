@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.yourtravel.model.Tour;
 import pl.edu.wszib.yourtravel.model.User;
+import pl.edu.wszib.yourtravel.model.view.RegistrationModel;
+import pl.edu.wszib.yourtravel.model.view.TourModel;
 import pl.edu.wszib.yourtravel.services.ITourService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
 
 import javax.annotation.Resource;
+import java.security.SecureRandom;
 
 @Controller
 public class AdminController {
@@ -44,5 +47,29 @@ public class AdminController {
         this.tourService.updateTour(tour);
 
         return "redirect:/main";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public String addForm(Model model){
+        if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
+            return "redirect:/login";
+        }
+        model.addAttribute("isLogged", this.sessionObject.isLogged());
+        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
+        model.addAttribute("info", this.sessionObject.getInfo());
+        model.addAttribute("tourModel", new TourModel());
+        return "add";
+    }
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String add(@ModelAttribute TourModel tourModel){
+        if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
+            return "redirect:/login";
+        }
+        if(this.tourService.addTour(tourModel)) {
+            return "redirect:/main";
+        } else {
+            this.sessionObject.setInfo("blad");
+            return "redirect:/add";
+        }
     }
 }

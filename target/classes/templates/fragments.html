@@ -17,6 +17,13 @@
     </nav>
 </div>
 
+<div id="menu2" th:fragment="menu2" th:if="${isLogged}">
+           <a href="/basket" class="menu-button" th:if="${isLogged}">Koszyk</a>
+            <a href="/logout" class="menu-button" th:if="${isLogged}">Wyloguj</a>
+            <a href="/login" class="menu-button" th:if="${!isLogged}">Zaloguj</a>
+
+</div>
+
 <img src="/logo.jpg" id="logo" th:fragment="logo">
 </body>
 </html>

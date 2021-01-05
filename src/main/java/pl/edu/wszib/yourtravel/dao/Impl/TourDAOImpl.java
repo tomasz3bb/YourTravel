@@ -62,6 +62,26 @@ public class TourDAOImpl implements ITourDAO {
     }
 
     @Override
+    public boolean addTour(Tour tour) {
+        String sql = "INSERT INTO tour (id, title, country, startDate, endDate, price, seats) VALUES (?, ?, ?, ?, ?, ?, ?);";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setInt(1, tour.getId());
+            preparedStatement.setString(2, tour.getTitle());
+            preparedStatement.setString(3, tour.getCountry());
+            preparedStatement.setDate(4, tour.getStartDate());
+            preparedStatement.setDate(5, tour.getEndDate());
+            preparedStatement.setDouble(6, tour.getPrice());
+            preparedStatement.setInt(7, tour.getSeats());
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
     public List<Tour> getAllTours() {
         List<Tour> tours = new ArrayList<>();
         try {

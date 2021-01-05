@@ -7,6 +7,7 @@ import java.util.List;
 public interface ITourDAO {
     Tour getTourById(int id);
     void updateTour(Tour tour);
+    boolean addTour(Tour tour);
     List<Tour> getAllTours();
 }
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Travel</title>
+    <link rel="stylesheet" href="/commons.css">
+    <link rel="stylesheet" href="/add.css">
+</head>
+<body>
+<div id="page">
+    <div th:replace="fragments.html :: logo"></div>
+    <div th:replace="fragments.html :: menu"></div>
+    <div id="content">
+        <form action="#" method="post" id="add-form">
+            <p th:if="${info}" th:text="${info}" id="error"></p>
+            <input type="text" th:field="*{tourModel.title}" id="title" placeholder="Nazwa wycieczki">
+            <input type="text" th:field="*{tourModel.country}" id="country" placeholder="Kraj">
+            <input type="date" th:field="*{tourModel.startDate}" id="startDate" placeholder="Data rozpoczęcia">
+            <input type="date" th:field="*{tourModel.endDate}" id="endDate" placeholder="Data zakończenia">
+            <input type="text" th:field="*{tourModel.price}" id="price" placeholder="Cena">
+            <input type="text" th:field="*{tourModel.seats}" id="seats" placeholder="Ilość miejsc">
+
+            <input type="submit">
+        </form>
+    </div>
+</div>
+</body>
+</html>
