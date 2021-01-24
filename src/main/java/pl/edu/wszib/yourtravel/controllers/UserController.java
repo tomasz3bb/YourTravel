@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.yourtravel.model.User;
@@ -23,6 +24,24 @@ public class UserController {
 
     @Resource
     SessionObject sessionObject;
+
+    @RequestMapping(value = "/account", method = RequestMethod.GET)
+    public String accountInfo(Model model){
+        if(!this.sessionObject.isLogged()) {
+            return "redirect:/login";
+        }
+        model.addAttribute("accountInfo", this.sessionObject.getLoggedUser());
+        model.addAttribute("isLogged", this.sessionObject.isLogged());
+        return "account";
+    }
+    @RequestMapping(value = "/pass", method = RequestMethod.POST)
+    public String changePass(@ModelAttribute String login, String pass){
+        this.userService.changePass(login, pass);
+        if(this.sessionObject.isLogged()) {
+            return "redirect:/main";
+        }
+        return "redirect:/login";
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String loginForm(Model model) {

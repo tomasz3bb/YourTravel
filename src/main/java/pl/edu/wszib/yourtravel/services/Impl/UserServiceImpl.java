@@ -46,4 +46,14 @@ public class UserServiceImpl implements IUserService {
 
         return this.userDAO.persist(newUser);
     }
+
+    @Override
+    public boolean changePass(String login, String pass) {
+        User userFromDatabase = this.userDAO.getUserByLogin(login);
+        if (userFromDatabase == null){
+            return false;
+        }
+        User newUser = new User(0, login, pass, User.Role.USER);
+        return this.userDAO.persist(newUser);
+    }
 }

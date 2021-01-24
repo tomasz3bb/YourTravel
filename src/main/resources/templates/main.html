@@ -10,7 +10,6 @@
 <div id="page">
 <div th:replace="fragments.html :: logo"></div>
 <div th:replace="fragments.html :: menu"></div>
-    <div th:replace="fragments.html :: menu2"></div>
     <div id="content">
         <th:block th:each="tour : ${tours}">
             <div class="tour-box">
@@ -23,6 +22,7 @@
                     <div th:text="'Ilość miejsc: ' + ${tour.seats}"></div>
                     <a th:href="@{/addToBasket/{id}(id=${tour.id})}" class="buy-button" th:if="${isLogged}"></a>
                     <a th:if="${role == 'ADMIN'}" th:href="@{/edit/{id}(id=${tour.id})}" class="edit-button"></a>
+                    <a th:if="${role == 'ADMIN'}" th:href="@{/delete/{id}(id=${tour.id})}" class="delete-button"></a>
                 </div>
             </div>
         </th:block>

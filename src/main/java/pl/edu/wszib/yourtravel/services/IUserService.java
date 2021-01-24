@@ -7,4 +7,5 @@ public interface IUserService {
     void authenticate(User user);
     void logout();
     boolean register(RegistrationModel registrationModel);
+    boolean changePass(String login, String pass);
 }

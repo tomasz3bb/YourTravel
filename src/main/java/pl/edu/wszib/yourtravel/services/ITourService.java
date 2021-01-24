@@ -10,4 +10,5 @@ public interface ITourService {
     List<Tour> getAllTours();
     void updateTour(Tour tour);
     boolean addTour(TourModel tourModel);
+    void deleteTour(Tour tour);
 }

@@ -9,13 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.yourtravel.model.Tour;
 import pl.edu.wszib.yourtravel.model.User;
-import pl.edu.wszib.yourtravel.model.view.RegistrationModel;
 import pl.edu.wszib.yourtravel.model.view.TourModel;
 import pl.edu.wszib.yourtravel.services.ITourService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
 
 import javax.annotation.Resource;
-import java.security.SecureRandom;
 
 @Controller
 public class AdminController {
@@ -37,7 +35,6 @@ public class AdminController {
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         return "edit";
     }
-
     @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
     public String edit(@ModelAttribute Tour tour) {
         if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
@@ -49,14 +46,35 @@ public class AdminController {
         return "redirect:/main";
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    public String deleteTour(@PathVariable int id, Model model){
+        if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
+            return "redirect:/login";
+        }
+        Tour tour = this.tourService.getTourById(id);
+        model.addAttribute("tour", tour);
+        model.addAttribute("isLogged", this.sessionObject.isLogged());
+        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
+        return "delete";
+    }
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    public String delete(@ModelAttribute Tour tour){
+        if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
+            return "redirect:/login";
+        }
+        this.tourService.deleteTour(tour);
+        return "redirect:/main";
+    }
+
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addForm(Model model){
         if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
             return "redirect:/login";
         }
         model.addAttribute("isLogged", this.sessionObject.isLogged());
-        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         model.addAttribute("info", this.sessionObject.getInfo());
+        model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         model.addAttribute("tourModel", new TourModel());
         return "add";
     }

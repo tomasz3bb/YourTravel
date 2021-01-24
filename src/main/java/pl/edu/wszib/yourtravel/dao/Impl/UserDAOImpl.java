@@ -53,4 +53,19 @@ public class UserDAOImpl implements IUserDAO {
             return false;
         }
     }
+
+    @Override
+    public void updateUserPass(String login, String pass) {
+        String sql = "UPDATE user SET pass = ? WHERE login = ?";
+        try {
+            PreparedStatement preparedStatement= this.connection.prepareStatement(sql);
+            preparedStatement.setString(1, pass);
+            preparedStatement.setString(2, login);
+            preparedStatement.executeUpdate();
+        }
+        catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }

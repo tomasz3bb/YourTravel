@@ -82,6 +82,20 @@ public class TourDAOImpl implements ITourDAO {
     }
 
     @Override
+    public boolean deleteTour(Tour tour) {
+        String sql = "DELETE FROM tour WHERE id=?";
+        try {
+            PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
+            preparedStatement.setInt(1, tour.getId());
+            preparedStatement.executeUpdate();
+            return true;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            return false;
+        }
+    }
+
+    @Override
     public List<Tour> getAllTours() {
         List<Tour> tours = new ArrayList<>();
         try {

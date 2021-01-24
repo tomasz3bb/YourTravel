@@ -11,7 +11,7 @@
     <div th:replace="fragments.html :: logo"></div>
     <div th:replace="fragments.html :: menu"></div>
     <div id="content">
-        <form action="#" method="post" id="add-form">
+        <form action="#" method="post" id="edit-form">
             <p th:if="${info}" th:text="${info}" id="error"></p>
             <input type="text" th:field="*{tourModel.title}" id="title" placeholder="Nazwa wycieczki">
             <input type="text" th:field="*{tourModel.country}" id="country" placeholder="Kraj">
@@ -19,7 +19,6 @@
             <input type="date" th:field="*{tourModel.endDate}" id="endDate" placeholder="Data zakończenia">
             <input type="text" th:field="*{tourModel.price}" id="price" placeholder="Cena">
             <input type="text" th:field="*{tourModel.seats}" id="seats" placeholder="Ilość miejsc">
-
             <input type="submit">
         </form>
     </div>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Travel</title>
+    <link rel="stylesheet" href="/commons.css">
+    <link rel="stylesheet" href="/login.css">
+</head>
+<body>
+<div id="page">
+<div th:replace="fragments.html :: logo"></div>
+    <div th:replace="fragments.html :: menu"></div>
+    <div id="content">
+        <h2>Podstawowe dane</h2>
+        <th:block th:each="user : ${accountInfo}">
+        <div>
+            <div class="id-info"><p th:text="'ID: ' + ${accountInfo.getId()}"></p></div>
+            <div class="login-info"><p th:text="'Login: ' + ${accountInfo.getLogin()}"></p></div>
+            <div class="role-info"><p th:text="'Rola: ' + ${accountInfo.getRole()}"></p></div>
+        </div>
+        </th:block>
+        <h2>Zmiana hasła</h2>
+
+</div>
+</body>
+</html>

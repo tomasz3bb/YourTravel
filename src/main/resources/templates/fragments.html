@@ -15,13 +15,12 @@
             <li><a href="/login" class="menu-button" th:if="${!isLogged}">Zaloguj</a></li>
         </ul>
     </nav>
-</div>
-
-<div id="menu2" th:fragment="menu2" th:if="${isLogged}">
-           <a href="/basket" class="menu-button" th:if="${isLogged}">Koszyk</a>
-            <a href="/logout" class="menu-button" th:if="${isLogged}">Wyloguj</a>
-            <a href="/login" class="menu-button" th:if="${!isLogged}">Zaloguj</a>
-
+    <nav class="skew-menu">
+        <ul>
+            <li><a href="/account" class="menu-button" th:if="${isLogged}">Twoje konto </a></li>
+            <li> <a href="/add" class="menu-button" th:if="${role == 'ADMIN'}">Dodaj nową wycieczkę</a></li>
+        </ul>
+    </nav>
 </div>
 
 <img src="/logo.jpg" id="logo" th:fragment="logo">
