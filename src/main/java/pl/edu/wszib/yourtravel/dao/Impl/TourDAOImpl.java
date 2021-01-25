@@ -1,7 +1,6 @@
 package pl.edu.wszib.yourtravel.dao.Impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
 import pl.edu.wszib.yourtravel.dao.ITourDAO;
 import pl.edu.wszib.yourtravel.model.Tour;
 
@@ -12,7 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+
 public class TourDAOImpl implements ITourDAO {
 
     @Autowired
@@ -82,16 +81,14 @@ public class TourDAOImpl implements ITourDAO {
     }
 
     @Override
-    public boolean deleteTour(Tour tour) {
+    public void deleteTour(Tour tour) {
         String sql = "DELETE FROM tour WHERE id=?";
         try {
             PreparedStatement preparedStatement = this.connection.prepareStatement(sql);
             preparedStatement.setInt(1, tour.getId());
             preparedStatement.executeUpdate();
-            return true;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            return false;
         }
     }
 
@@ -116,5 +113,10 @@ public class TourDAOImpl implements ITourDAO {
             throwables.printStackTrace();
         }
         return tours;
+    }
+
+    @Override
+    public void deleteSeats(int id) {
+
     }
 }

@@ -10,7 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-@Repository
+
 public class UserDAOImpl implements IUserDAO {
 
     @Autowired
@@ -51,20 +51,6 @@ public class UserDAOImpl implements IUserDAO {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
             return false;
-        }
-    }
-
-    @Override
-    public void updateUserPass(String login, String pass) {
-        String sql = "UPDATE user SET pass = ? WHERE login = ?";
-        try {
-            PreparedStatement preparedStatement= this.connection.prepareStatement(sql);
-            preparedStatement.setString(1, pass);
-            preparedStatement.setString(2, login);
-            preparedStatement.executeUpdate();
-        }
-        catch (SQLException throwables) {
-            throwables.printStackTrace();
         }
     }
 

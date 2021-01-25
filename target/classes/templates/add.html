@@ -11,7 +11,7 @@
     <div th:replace="fragments.html :: logo"></div>
     <div th:replace="fragments.html :: menu"></div>
     <div id="content">
-        <form action="#" method="post" id="edit-form">
+        <form action="#" method="post" id="add-form">
             <p th:if="${info}" th:text="${info}" id="error"></p>
             <input type="text" th:field="*{tourModel.title}" id="title" placeholder="Nazwa wycieczki">
             <input type="text" th:field="*{tourModel.country}" id="country" placeholder="Kraj">

@@ -1,29 +1,26 @@
-#add-form {
+p{
+    text-align: center;
+    font-size: 24px;
+}
+
+#pass-form{
     width: 800px;
     margin: 70px auto;
 }
-#add-form input[type="text"] {
-    width: 80%;
-    margin: 10px auto;
-    display: block;
-    font-size: 20px;
-    padding: 5px;
-    text-align: center;
-}
-#add-form input[type="date"] {
-    width: 80%;
-    margin: 10px auto;
-    display: block;
-    font-size: 20px;
-    padding: 5px;
-    text-align: center;
-}
 
-#add-form input[type="submit"] {
+#pass-form input[type="password"] {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+}
+#pass-form button[type="submit"] {
     width: 200px;
     margin: 10px auto;
     display: block;
-    font-size: 20px;
+    font-size: 24px;
     border: 2px solid black;
     color: black;
     background-color: white;
@@ -31,7 +28,7 @@
     cursor: pointer;
     transition: color 0.5s, background-color 0.5s;
 }
-#add-form input[type="submit"]:hover {
+#pass-form button[type="submit"]:hover {
     color: white;
     background-color: black;
 }

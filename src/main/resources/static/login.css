@@ -5,7 +5,7 @@
 .login-info, .id-info, .role-info {
     margin: 5px auto;
     display: block;
-    font-size: 18px;
+    font-size: 24px;
     text-align: justify;
 }
 
@@ -13,7 +13,7 @@
     width: 80%;
     margin: 10px auto;
     display: block;
-    font-size: 20px;
+    font-size: 24px;
     padding: 5px;
     text-align: center;
 }
@@ -21,7 +21,7 @@
     width: 80%;
     margin: 10px auto;
     display: block;
-    font-size: 20px;
+    font-size: 24px;
     padding: 5px;
     text-align: center;
 }
@@ -29,7 +29,7 @@
     width: 200px;
     margin: 10px auto;
     display: block;
-    font-size: 20px;
+    font-size: 24px;
     border: 2px solid black;
     color: black;
     background-color: white;
@@ -44,7 +44,7 @@
 #register-link {
     display: block;
     margin: 10px 0;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
 }
 p{

@@ -11,6 +11,7 @@ import java.util.List;
 @Component
 @SessionScope
 public class SessionObject {
+
     private User loggedUser = null;
     private String info = null;
     private final List<Tour> basket = new ArrayList<>();
