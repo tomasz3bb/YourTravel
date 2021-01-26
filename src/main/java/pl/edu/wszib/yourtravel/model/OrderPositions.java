@@ -47,11 +47,6 @@ public class OrderPositions {
 
     @Override
     public String toString() {
-        return "OrderPositions{" +
-                "id=" + id +
-                ", pieces=" + pieces +
-                ", tour=" + tour +
-                ", order=" + order +
-                '}';
+        return pieces + " " + tour ;
     }
 }

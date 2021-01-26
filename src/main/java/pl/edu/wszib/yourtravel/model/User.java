@@ -56,12 +56,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", pass='" + pass + '\'' +
-                ", role=" + role +
-                '}';
+        return login;
     }
 
     public enum Role{

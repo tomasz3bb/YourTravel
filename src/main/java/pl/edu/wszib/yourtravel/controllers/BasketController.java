@@ -3,12 +3,9 @@ package pl.edu.wszib.yourtravel.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.edu.wszib.yourtravel.model.Tour;
-import pl.edu.wszib.yourtravel.model.User;
 import pl.edu.wszib.yourtravel.services.IBasketService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
 
@@ -42,5 +39,4 @@ public class BasketController {
         this.basketService.addTourByIdToBasket(id);
         return "redirect:/main";
     }
-
 }

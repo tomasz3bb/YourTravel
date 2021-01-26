@@ -24,6 +24,17 @@ public class Order {
         ENDED
     }
 
+    public Order() {
+    }
+
+    public Order(int id, User user, Set<OrderPositions> positions, double price, Status status) {
+        this.id = id;
+        this.user = user;
+        this.positions = positions;
+        this.price = price;
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }

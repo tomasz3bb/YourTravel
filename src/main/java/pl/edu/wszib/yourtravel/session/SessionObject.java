@@ -16,7 +16,7 @@ public class SessionObject {
     private User loggedUser = null;
     private String info = null;
     private final List<Tour> basket = new ArrayList<>();
-    private final List<Order> order = new ArrayList<>();
+    private final List<Order> orders = new ArrayList<>();
 
     public User getLoggedUser() {
         return loggedUser;
@@ -43,7 +43,8 @@ public class SessionObject {
         return basket;
     }
 
-    public List<Order> getOrder(){
-        return order;
+    public List<Order> getOrders(){
+        return orders;
     }
+
 }

@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.edu.wszib.yourtravel.model.Order;
-import pl.edu.wszib.yourtravel.model.OrderPositions;
 import pl.edu.wszib.yourtravel.model.Tour;
 import pl.edu.wszib.yourtravel.model.User;
 import pl.edu.wszib.yourtravel.model.view.TourModel;

@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.edu.wszib.yourtravel.dao.IOrderDAO;
 import pl.edu.wszib.yourtravel.model.Order;
-import pl.edu.wszib.yourtravel.model.Tour;
+import pl.edu.wszib.yourtravel.model.User;
 
 import java.util.List;
 
@@ -48,9 +48,10 @@ public class HibernateOrderDAOImpl implements IOrderDAO {
     }
 
     @Override
-    public List<Order> getAllOrders() {
-        Session session = this.sessionFactory.openSession();
-        Query<Order> query = session.createQuery( "FROM pl.edu.wszib.yourtravel.model.Order");
+    public List<Order> getAllOrdersByUser(User user) {
+        Session session =this.sessionFactory.openSession();
+        Query<Order> query = session.createQuery("FROM pl.edu.wszib.yourtravel.model.Order where user = : user");
+        query.setParameter("user", user);
         List<Order> orders = query.getResultList();
         session.close();
         return orders;

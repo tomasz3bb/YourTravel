@@ -37,7 +37,11 @@
         <div class="price">Suma</div>
         <div class="total" th:text="${sum} + ' zł'"></div>
     </div>
-    <a href="/order" class="menu-button" th:if="${isLogged}">Przejdź do zamówienia</a>
+        <nav class="skew-menu">
+            <ul>
+                <li><a href="/order" class="menu-button" th:if="${isLogged}">Przejdź do zamówienia</a></li>
+            </ul>
+        </nav>
 </div>
 </div>
 </body>

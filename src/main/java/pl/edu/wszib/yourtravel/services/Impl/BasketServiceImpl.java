@@ -30,23 +30,27 @@ public class BasketServiceImpl implements IBasketService {
     @Override
     public void addTourByIdToBasket(int id) {
         Tour tour = this.tourDAO.getTourById(id);
-        updateSeats(tour);
-        for (Tour tourFromBasket : this.sessionObject.getBasket()){
-            if (tourFromBasket.getId() == tour.getId()){
-                if (tour.getSeats()>0){
-                    tourFromBasket.setSeats(tourFromBasket.getSeats()+1);
+        if (tour.getSeats() > 0) {
+            deleteSeats(tour);
+        }else {
+            return;
+        }
+        for (Tour tourFromBasket : this.sessionObject.getBasket()) {
+            if (tourFromBasket.getId() == tour.getId()) {
+                if (tour.getSeats() >= 0) {
+                    tourFromBasket.setSeats(tourFromBasket.getSeats() + 1);
                     return;
-                }else {
+                } else {
                     return;
                 }
             }
         }
-
         tour.setSeats(1);
         this.sessionObject.getBasket().add(tour);
     }
-    public void updateSeats (Tour tour){
-        tour.setSeats(tour.getSeats()-1);
+
+    public void deleteSeats (Tour tour) {
+        tour.setSeats(tour.getSeats() - 1);
         this.tourDAO.updateTour(tour);
     }
 }
