@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
 
-@Entity
+@Entity(name = "ttour")
 public class Tour {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

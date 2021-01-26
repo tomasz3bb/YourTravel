@@ -8,15 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.edu.wszib.yourtravel.dao.IOrderDAO;
 import pl.edu.wszib.yourtravel.model.Order;
+import pl.edu.wszib.yourtravel.model.Tour;
+
+import java.util.List;
 
 @Repository
-public class OrderDAOImpl implements IOrderDAO {
+public class HibernateOrderDAOImpl implements IOrderDAO {
 
     @Autowired
     SessionFactory sessionFactory;
 
     @Override
-    public void saveOrder(Order order) {
+    public boolean saveOrder(Order order) {
         Session session = this.sessionFactory.openSession();
         Transaction tx = null;
         try {
@@ -31,9 +34,8 @@ public class OrderDAOImpl implements IOrderDAO {
         finally {
             session.close();
         }
+        return true;
     }
-
-
 
     @Override
     public Order getOrderById(int id) {
@@ -43,5 +45,14 @@ public class OrderDAOImpl implements IOrderDAO {
         Order order = query.getSingleResult();
         session.close();
         return order;
+    }
+
+    @Override
+    public List<Order> getAllOrders() {
+        Session session = this.sessionFactory.openSession();
+        Query<Order> query = session.createQuery( "FROM pl.edu.wszib.yourtravel.model.Order");
+        List<Order> orders = query.getResultList();
+        session.close();
+        return orders;
     }
 }

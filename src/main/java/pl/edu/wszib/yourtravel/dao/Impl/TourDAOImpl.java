@@ -115,8 +115,4 @@ public class TourDAOImpl implements ITourDAO {
         return tours;
     }
 
-    @Override
-    public void deleteSeats(int id) {
-
-    }
 }

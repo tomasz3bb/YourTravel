@@ -2,7 +2,7 @@ package pl.edu.wszib.yourtravel.model;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "tuser")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

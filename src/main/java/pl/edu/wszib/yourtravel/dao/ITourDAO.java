@@ -9,7 +9,6 @@ public interface ITourDAO {
     void updateTour(Tour tour);
     boolean addTour(Tour tour);
     void deleteTour(Tour tour);
-    void deleteSeats(int id);
     List<Tour> getAllTours();
 }
 

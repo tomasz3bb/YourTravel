@@ -85,30 +85,6 @@ public class HibernateTourDAOImpl implements ITourDAO {
     }
 
     @Override
-    public void deleteSeats(int id) {
-        Session session = this.sessionFactory.openSession();
-        Transaction tx = null;
-        Query<Tour> query = session.createQuery("FROM pl.edu.wszib.yourtravel.model.Tour WHERE id = :id");
-        query.setParameter("id", id);
-        Tour tour = null;
-        try {
-            tour = query.getSingleResult();
-            tx = session.beginTransaction();
-            tour.setSeats(tour.getSeats() - 1);
-            session.update(tour);
-            tx.commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            if (tour != null){
-                System.out.println("Nie znaleziono produktu");
-            }
-        }
-        finally {
-            session.close();
-        }
-    }
-
-    @Override
     public List<Tour> getAllTours() {
         Session session = this.sessionFactory.openSession();
         Query<Tour> query = session.createQuery( "FROM pl.edu.wszib.yourtravel.model.Tour");

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Travel</title>
+    <link rel="stylesheet" href="/basket.css">
+    <link rel="stylesheet" href="/commons.css">
+</head>
+<body>
+<div id="page">
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+    <th:block th:each="order : ${orders}">
+        <div th:text="${order.id}" class="title-box"></div>
+        <div th:text="${order.user}" class="country-box"></div>
+        <div th:text="${order.positions}" class="country-box"></div>
+        <div th:text="${order.price}"></div>
+        <div th:text="${order.status}"></div>
+    </th:block>
+</div>
+</div>
+</body>
+</html>

@@ -33,6 +33,8 @@
         <!-- List of XML mapping files -->
         <mapping class="pl.edu.wszib.yourtravel.model.Tour"/>
         <mapping class="pl.edu.wszib.yourtravel.model.User"/>
+        <mapping class="pl.edu.wszib.yourtravel.model.Order"/>
+        <mapping class="pl.edu.wszib.yourtravel.model.OrderPositions"/>
 
     </session-factory>
 </hibernate-configuration>

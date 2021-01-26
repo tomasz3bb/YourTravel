@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "order")
+@Entity(name = "torder")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -7,19 +7,26 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pl.edu.wszib.yourtravel.model.Order;
+import pl.edu.wszib.yourtravel.model.OrderPositions;
 import pl.edu.wszib.yourtravel.model.Tour;
 import pl.edu.wszib.yourtravel.model.User;
 import pl.edu.wszib.yourtravel.model.view.TourModel;
+import pl.edu.wszib.yourtravel.services.IOrderService;
 import pl.edu.wszib.yourtravel.services.ITourService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Controller
 public class AdminController {
 
     @Autowired
     ITourService tourService;
+
+    @Autowired
+    IOrderService orderService;
 
     @Resource
     SessionObject sessionObject;
@@ -65,7 +72,6 @@ public class AdminController {
         this.tourService.deleteTour(tour);
         return "redirect:/main";
     }
-
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public String addForm(Model model){

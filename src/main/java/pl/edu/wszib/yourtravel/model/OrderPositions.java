@@ -2,7 +2,7 @@ package pl.edu.wszib.yourtravel.model;
 
 import javax.persistence.*;
 
-@Entity(name = "orderposition")
+@Entity(name = "torderposition")
 public class OrderPositions {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
