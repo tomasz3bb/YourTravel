@@ -8,8 +8,6 @@ import java.util.List;
 
 public interface IOrderService {
     double calculateTotal();
-    boolean saveOrder(Order order);
-    boolean saveOrderPosition(OrderPositions orderPositions);
-    Order getOrderById(int id);
+    boolean saveOrder(Order order, OrderPositions orderPositions);
     List<Order> getAllOrdersByUser(User user);
 }

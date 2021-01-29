@@ -13,6 +13,16 @@ public class OrderPositions {
     @ManyToOne( fetch = FetchType.EAGER)
     private Order order;
 
+    public OrderPositions() {
+    }
+
+    public OrderPositions(int id, int pieces, Tour tour, Order order) {
+        this.id = id;
+        this.pieces = pieces;
+        this.tour = tour;
+        this.order = order;
+    }
+
     public int getId() {
         return id;
     }
@@ -47,6 +57,7 @@ public class OrderPositions {
 
     @Override
     public String toString() {
-        return pieces + " " + tour ;
+        return
+                "Ilość osób: " + pieces + " " + "Wycieczka: " + tour ;
     }
 }
