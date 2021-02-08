@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pl.edu.wszib.yourtravel.model.Tour;
 import pl.edu.wszib.yourtravel.services.IBasketService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
 
@@ -38,5 +39,13 @@ public class BasketController {
         }
         this.basketService.addTourByIdToBasket(id);
         return "redirect:/main";
+    }
+    @RequestMapping(value = "/deleteFromBasket/{id}", method = RequestMethod.GET)
+    public String deleteFromBasket(@PathVariable int id){
+        if(!this.sessionObject.isLogged()) {
+            return "redirect:/login";
+        }
+        this.basketService.deleteTourFromBasket(id);
+        return "redirect:/basket";
     }
 }

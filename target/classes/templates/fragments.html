@@ -19,7 +19,8 @@
         <ul>
             <li><a href="/account" class="menu-button" th:if="${isLogged}">Twoje konto </a></li>
             <li><a href="/order" class="menu-button" th:if="${isLogged}">Twoje zamówienia </a></li>
-            <li> <a href="/add" class="menu-button" th:if="${role == 'ADMIN'}">Dodaj nową wycieczkę</a></li>
+            <li><a href="/add" class="menu-button" th:if="${role == 'ADMIN'}">Dodaj nową wycieczkę</a></li>
+            <li><a href="/orders" class="menu-button" th:if="${role == 'ADMIN'}">Wszystkie zamówienia</a></li>
         </ul>
     </nav>
 </div>

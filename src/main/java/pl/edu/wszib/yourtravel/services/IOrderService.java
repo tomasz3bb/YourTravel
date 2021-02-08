@@ -10,4 +10,5 @@ public interface IOrderService {
     double calculateTotal();
     boolean saveOrder(Order order, OrderPositions orderPositions);
     List<Order> getAllOrdersByUser(User user);
+    List<Order> getAllOrders();
 }

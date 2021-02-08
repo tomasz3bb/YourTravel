@@ -20,6 +20,8 @@
             <div class="role-info"><p th:text="'Rola: ' + ${accountInfo.getRole()}"></p></div>
         </div>
         </th:block>
+        <h2>Zmiana hasła</h2>
+        <a th:href="@{/changepass/{id}(id=${accountInfo.id})}" th:if="${isLogged}">Zmień hasło</a>
     </div>
 </div>
 </body>

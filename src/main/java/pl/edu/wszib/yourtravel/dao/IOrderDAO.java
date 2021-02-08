@@ -9,4 +9,5 @@ public interface IOrderDAO {
     boolean saveOrder(Order order);
     Order getOrderById(int id);
     List<Order> getAllOrdersByUser(User user);
+    List<Order> getAllOrders();
 }

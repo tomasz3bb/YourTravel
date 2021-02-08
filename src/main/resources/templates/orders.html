@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Travel</title>
+    <link rel="stylesheet" href="/orders.css">
+    <link rel="stylesheet" href="/commons.css">
+    <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+<div id="page">
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+
+    <div class="row header">
+        <div class="orderid">Id zamówienia</div>
+        <div class="userid">Użytkownik</div>
+        <div class="orderpostition">Pozycja</div>
+        <div class="price">Cena zamówienia</div>
+        <div class="status">Status zamównienia</div>
+    </div>
+
+    <th:block th:each="order: ${allOrders}">
+        <div class="row">
+            <div class="orderid" th:text="${order.id}"></div>
+            <div class="userid" th:text="${order.user}"></div>
+            <div class="orderpostition" th:text="${order.positions}"></div>
+            <div class="price" th:text="${order.price} + ' zł'"></div>
+            <div class="status" th:text="${order.status}"></div>
+            <a th:if="${role == 'ADMIN'}" th:href="@{/editorder/{id}(id=${order.id})}" class="edit-button">Edytuj</a>
+        </div>
+    </th:block>
+
+</div>
+</div>
+</body>
+</html>

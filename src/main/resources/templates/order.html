@@ -21,7 +21,7 @@
         <div class="status">Status zamównienia</div>
     </div>
 
-    <th:block th:each="order: ${orders}">
+    <th:block th:each="order: ${userOrder}">
         <div class="row">
             <div class="orderid" th:text="${order.id}"></div>
             <div class="userid" th:text="${order.user}"></div>

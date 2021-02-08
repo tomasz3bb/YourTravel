@@ -60,4 +60,5 @@ public class OrderPositions {
         return
                 "Ilość osób: " + pieces + " " + "Wycieczka: " + tour ;
     }
+
 }

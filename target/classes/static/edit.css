@@ -18,7 +18,14 @@
     padding: 5px;
     text-align: center;
 }
-
+#edit-form input[type="password"] {
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+    text-align: center;
+}
 #edit-form input[type="submit"] {
     width: 200px;
     margin: 10px auto;
@@ -37,6 +44,20 @@
 }
 
 #edit-form input[type="button"] {
+    width: 200px;
+    margin: 10px auto;
+    display: block;
+    font-size: 20px;
+    border: 2px solid black;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+
+#edit-form input[type="radio"] {
     width: 200px;
     margin: 10px auto;
     display: block;

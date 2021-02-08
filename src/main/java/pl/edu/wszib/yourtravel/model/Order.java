@@ -20,7 +20,6 @@ public class Order {
     public enum Status{
         ORDERED,
         ACCEPTED,
-        SENT,
         ENDED
     }
 
