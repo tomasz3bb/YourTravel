@@ -18,6 +18,7 @@
         <div class="seats">Ilość miejsc</div>
         <div class="price">Cena za sztukę</div>
         <div class="total">Cena</div>
+        <div class="total"></div>
     </div>
 
     <th:block th:each="tour : ${tours}">
@@ -27,6 +28,7 @@
             <div class="seats" th:text="${tour.seats}"></div>
             <div class="price" th:text="${tour.price} + ' zł'"></div>
             <div class="total" th:text="${tour.price * tour.seats} + ' zł'"></div>
+            <div class="total" ><a th:href="@{/deleteFromBasket/{id}(id=${tour.id})}"th:if="${isLogged}">Usuń z koszyka</a></div>
         </div>
     </th:block>
 
@@ -40,6 +42,7 @@
         <nav class="skew-menu">
             <ul>
                 <li><a href="/preorder" class="menu-button" th:if="${isLogged}">Przejdź do zamówienia</a></li>
+
             </ul>
         </nav>
 </div>
