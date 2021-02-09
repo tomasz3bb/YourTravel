@@ -9,6 +9,8 @@ import org.springframework.stereotype.Repository;
 import pl.edu.wszib.yourtravel.dao.IOrderPositionsDAO;
 import pl.edu.wszib.yourtravel.model.OrderPositions;
 
+import java.util.List;
+
 @Repository
 public class HibernateOrderPositionsDAOImpl implements IOrderPositionsDAO {
 

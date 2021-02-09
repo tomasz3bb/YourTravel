@@ -27,5 +27,8 @@ public class OrderDAOStub implements IOrderDAO {
         return null;
     }
 
-
+    @Override
+    public boolean updateOrder(Order order) {
+        return false;
+    }
 }

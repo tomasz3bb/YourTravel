@@ -11,4 +11,6 @@ public interface IOrderService {
     boolean saveOrder(Order order, OrderPositions orderPositions);
     List<Order> getAllOrdersByUser(User user);
     List<Order> getAllOrders();
+    void updateOrder(Order order);
+    Order getOrderById(int id);
 }

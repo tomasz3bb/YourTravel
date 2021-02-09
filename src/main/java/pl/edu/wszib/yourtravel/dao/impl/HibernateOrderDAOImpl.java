@@ -66,4 +66,22 @@ public class HibernateOrderDAOImpl implements IOrderDAO {
         return orders;
     }
 
+    @Override
+    public boolean updateOrder(Order order) {
+        Session session = this.sessionFactory.openSession();
+        Transaction tx = null;
+        try {
+            tx=session.beginTransaction();
+            session.update(order);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null){
+                tx.rollback();
+            }
+        }
+        finally {
+            session.close();
+        }
+        return true;
+    }
 }

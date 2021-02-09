@@ -17,6 +17,8 @@ import pl.edu.wszib.yourtravel.services.ITourService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Set;
 
 @Controller
 public class OrderController {
@@ -87,17 +89,19 @@ public class OrderController {
         if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
             return "redirect:/login";
         }
+        Order orderFromBasket = this.orderService.getOrderById(id);
 
+        model.addAttribute("currentOrder", orderFromBasket);
         model.addAttribute("isLogged", this.sessionObject.isLogged());
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
         return "editorder";
     }
     @RequestMapping(value = "/editorder/{id}", method = RequestMethod.POST)
-    public String editOrder(@ModelAttribute Order order, @ModelAttribute OrderPositions orderPositions) {
+    public String editOrder(@ModelAttribute Order order) {
         if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
             return "redirect:/login";
         }
-
+        this.orderService.updateOrder(order);
         return "redirect:/orders";
     }
 }

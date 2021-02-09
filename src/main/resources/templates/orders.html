@@ -19,6 +19,7 @@
         <div class="orderpostition">Pozycja</div>
         <div class="price">Cena zamówienia</div>
         <div class="status">Status zamównienia</div>
+        <div class="status"></div>
     </div>
 
     <th:block th:each="order: ${allOrders}">
@@ -28,7 +29,7 @@
             <div class="orderpostition" th:text="${order.positions}"></div>
             <div class="price" th:text="${order.price} + ' zł'"></div>
             <div class="status" th:text="${order.status}"></div>
-            <a th:if="${role == 'ADMIN'}" th:href="@{/editorder/{id}(id=${order.id})}" class="edit-button">Edytuj</a>
+            <a th:if="${role == 'ADMIN'}" th:href="@{/editorder/{id}(id=${order.id})}" class="edit-button">Zmień status</a>
         </div>
     </th:block>
 

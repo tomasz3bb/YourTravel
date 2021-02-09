@@ -45,6 +45,10 @@ public class OrderServiceImpl implements IOrderService {
         return this.orderDAO.getAllOrdersByUser(user);
     }
 
+    @Override
+    public Order getOrderById(int id) {
+        return this.orderDAO.getOrderById(id);
+    }
 
     @Override
     public boolean saveOrder(Order order, OrderPositions orderPositions){
@@ -73,4 +77,12 @@ public class OrderServiceImpl implements IOrderService {
         return this.orderDAO.getAllOrders();
     }
 
+    @Override
+    public void updateOrder(Order order) {
+        Order orderFromBasket = this.orderDAO.getOrderById(order.getId());
+        
+        orderFromBasket.setStatus(order.getStatus());
+
+        this.orderDAO.updateOrder(orderFromBasket);
+    }
 }

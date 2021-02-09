@@ -55,17 +55,3 @@
     cursor: pointer;
     transition: color 0.5s, background-color 0.5s;
 }
-
-
-#edit-form input[type="radio"] {
-    width: 200px;
-    margin: 10px auto;
-    display: block;
-    font-size: 20px;
-    border: 2px solid black;
-    color: black;
-    background-color: white;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: color 0.5s, background-color 0.5s;
-}

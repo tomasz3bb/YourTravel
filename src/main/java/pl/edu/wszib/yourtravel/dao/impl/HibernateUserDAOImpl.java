@@ -68,12 +68,12 @@ public class HibernateUserDAOImpl implements IUserDAO {
     }
 
     @Override
-    public boolean updateUser(User currentUser) {
+    public boolean updateUser(User user) {
         Session session = this.sessionFactory.openSession();
         Transaction tx = null;
         try {
             tx = session.beginTransaction();
-            session.update(currentUser);
+            session.update(user);
             tx.commit();
         } catch (Exception e) {
             if (tx != null){

@@ -12,7 +12,13 @@
 <div th:replace="fragments.html :: menu"></div>
 <div id="content">
     <form method="post" id="edit-form">
-
+        <input type="radio" th:field="*{currentOrder.status}" name="status" value="ORDERED" id="ORDERED">
+        <label for="ORDERED">ORDERED</label><br>
+        <input type="radio" th:field="*{currentOrder.status}" name="status" value="ACCEPTED" id="ACCEPTED">
+        <label for="ACCEPTED">ACCEPTED</label><br>
+        <input type="radio" th:field="*{currentOrder.status}" name="status" value="ENDED" id="ENDED">
+        <label for="ENDED">ENDED</label>
+        <input type="submit">
     </form>
 </div>
 </div>
