@@ -20,12 +20,11 @@ public class TourDAOStub implements ITourDAO {
 
     @Override
     public boolean addTour(Tour tour) {
-        return false;
+        return true;
     }
 
     @Override
     public void deleteTour(Tour tour) {
-
     }
 
     @Override

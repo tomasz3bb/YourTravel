@@ -22,7 +22,6 @@ pl\edu\wszib\yourtravel\services\ITourService.class
 pl\edu\wszib\yourtravel\services\IBasketService.class
 pl\edu\wszib\yourtravel\dao\impl\HibernateOrderDAOImpl.class
 pl\edu\wszib\yourtravel\dao\impl\HibernateTourDAOImpl.class
-pl\edu\wszib\yourtravel\model\view\TourModel.class
 pl\edu\wszib\yourtravel\controllers\BasketController.class
 pl\edu\wszib\yourtravel\services\impl\OrderServiceImpl.class
 pl\edu\wszib\yourtravel\controllers\AdminController.class

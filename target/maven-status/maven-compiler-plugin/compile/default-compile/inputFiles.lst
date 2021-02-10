@@ -1,5 +1,4 @@
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\services\IOrderService.java
-D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\model\view\TourModel.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\services\IBasketService.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\dao\IOrderPositionsDAO.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\dao\IOrderDAO.java
@@ -21,6 +20,7 @@ D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\y
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\dao\impl\HibernateTourDAOImpl.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\dao\IUserDAO.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\controllers\CommonController.java
+D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\model\view\PassModel.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\dao\ITourDAO.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\model\Tour.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\model\Order.java
@@ -28,3 +28,4 @@ D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\y
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\configuration\AppConfiguration.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\services\IUserService.java
 D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\dao\impl\HibernateOrderDAOImpl.java
+D:\DOKUMENTY\STUDIA\Programowanie\Aplikacja_projekt\src\main\java\pl\edu\wszib\yourtravel\rest\controllers\SimpleRestController.java

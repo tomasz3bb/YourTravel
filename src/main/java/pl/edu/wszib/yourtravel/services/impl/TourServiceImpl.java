@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.edu.wszib.yourtravel.dao.ITourDAO;
 import pl.edu.wszib.yourtravel.model.Tour;
-import pl.edu.wszib.yourtravel.model.view.TourModel;
 import pl.edu.wszib.yourtravel.services.ITourService;
 
 import java.util.List;
@@ -39,9 +38,9 @@ public class TourServiceImpl implements ITourService {
     }
 
     @Override
-    public boolean addTour(TourModel tourModel) {
-        Tour newTour = new Tour(0, tourModel.getTitle(), tourModel.getCountry(), tourModel.getStartDate(),
-                tourModel.getEndDate(), tourModel.getPrice(), tourModel.getSeats());
+    public boolean addTour(Tour tour) {
+        Tour newTour = new Tour(0, tour.getTitle(), tour.getCountry(), tour.getStartDate(),
+                tour.getEndDate(), tour.getPrice(), tour.getSeats());
         return this.tourDAO.addTour(newTour);
     }
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class OrderDAOStub implements IOrderDAO {
     @Override
     public boolean saveOrder(Order order) {
-        return false;
+        return true;
     }
 
     @Override
@@ -29,6 +29,7 @@ public class OrderDAOStub implements IOrderDAO {
 
     @Override
     public boolean updateOrder(Order order) {
-        return false;
+        return true;
     }
+
 }

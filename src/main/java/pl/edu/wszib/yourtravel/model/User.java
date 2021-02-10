@@ -54,6 +54,10 @@ public class User {
         this.role = role;
     }
 
+    public User clone(){
+        return new User(this.id, this.login, this.pass, this.role);
+    }
+
     @Override
     public String toString() {
         return login;

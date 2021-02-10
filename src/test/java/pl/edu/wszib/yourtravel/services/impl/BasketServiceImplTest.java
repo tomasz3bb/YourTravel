@@ -47,8 +47,8 @@ public class BasketServiceImplTest {
 
     @Test
     public void calculateTotalTest(){
-        Date startDate = new Date(01-01-2021);
-        Date endDate = new Date(01-02-2021);
+        Date startDate = Date.valueOf("2021-01-12");
+        Date endDate = Date.valueOf("2021-01-24");
         sessionObject.getBasket().add(new Tour(1, "Szlakiem faraonów", "Egipt", startDate, endDate , 100.00, 3));
         sessionObject.getBasket().add(new Tour(2,"Stany Ameryki", "USA", startDate, endDate, 200.00, 2 ));
 
@@ -58,4 +58,7 @@ public class BasketServiceImplTest {
 
         Assert.assertEquals(expectedResult, result, 0.01);
     }
+
+
+
 }

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.edu.wszib.yourtravel.model.Tour;
 import pl.edu.wszib.yourtravel.model.User;
-import pl.edu.wszib.yourtravel.model.view.TourModel;
 import pl.edu.wszib.yourtravel.services.IOrderService;
 import pl.edu.wszib.yourtravel.services.ITourService;
 import pl.edu.wszib.yourtravel.session.SessionObject;
@@ -79,15 +78,15 @@ public class AdminController {
         model.addAttribute("isLogged", this.sessionObject.isLogged());
         model.addAttribute("info", this.sessionObject.getInfo());
         model.addAttribute("role", this.sessionObject.isLogged() ? this.sessionObject.getLoggedUser().getRole().toString() : null);
-        model.addAttribute("tourModel", new TourModel());
+        model.addAttribute("tour", new Tour());
         return "add";
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String add(@ModelAttribute TourModel tourModel){
+    public String add(@ModelAttribute Tour tour){
         if(!this.sessionObject.isLogged() || this.sessionObject.getLoggedUser().getRole() != User.Role.ADMIN) {
             return "redirect:/login";
         }
-        if(this.tourService.addTour(tourModel)) {
+        if(this.tourService.addTour(tour)) {
             return "redirect:/main";
         } else {
             this.sessionObject.setInfo("blad");

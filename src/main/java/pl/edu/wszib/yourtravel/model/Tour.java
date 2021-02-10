@@ -87,6 +87,10 @@ public class Tour {
         this.price = price;
     }
 
+    public Tour clone (){
+        return new Tour(this.id, this.title, this.country, this.startDate, this.endDate, this.price, this.seats);
+    }
+
     @Override
     public String toString() {
         return title + ", " + country;

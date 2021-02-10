@@ -28,8 +28,8 @@ public class SimpleRestController {
         tour1.setId(1);
         tour1.setTitle("Szlakiem faraonów");
         tour1.setCountry("Egipt");
-        tour1.setStartDate(new Date(120,0,10));
-        tour1.setEndDate(new Date(120,0,24));
+        tour1.setStartDate(Date.valueOf("2021-01-12"));
+        tour1.setEndDate(Date.valueOf("2021-01-24"));
         tour1.setSeats(50);
         tour1.setPrice(765.50);
 
@@ -42,8 +42,8 @@ public class SimpleRestController {
         tour2.setId(2);
         tour2.setTitle("Alpy");
         tour2.setCountry("Austria");
-        tour2.setStartDate(new Date(121,01,12));
-        tour2.setEndDate(new Date(121,01,27));
+        tour2.setStartDate(Date.valueOf("2021-02-08"));
+        tour2.setEndDate(Date.valueOf("2021-02-23"));
         tour2.setSeats(20);
         tour2.setPrice(365.50);
 
